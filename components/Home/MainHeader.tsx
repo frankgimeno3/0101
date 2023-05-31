@@ -15,7 +15,7 @@ const MainHeader = () => {
           <h1 className="text-4xl md:text-6xl text-gray-100 font-bold">
             TECNOBOLSA
           </h1>
-          <p className="text-xl text-white max-w-[45vw] m-auto pt-10 font-light">
+          <p className="xl:text-xl text-white max-w-[45vw] sm:max-w-[50vw] m-auto pt-3 font-light sm:text-xs md:text-xs">
             Conectamos empresas con personal técnico especializado en los 21 países de habla hispana. Únase a nosotros para encontrar talento o empleo desde hoy mismo.
           </p>
         </div>
