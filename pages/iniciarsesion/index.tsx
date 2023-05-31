@@ -1,11 +1,11 @@
-import { Inter } from 'next/font/google';
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { Inter } from "next/font/google";
+import { useState, ChangeEvent, FormEvent } from "react";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function IniciarSesion() {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -22,45 +22,57 @@ export default function IniciarSesion() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center  pt-24 text-center">
-      <h1 className="text-4xl mb-10">Iniciar sesión</h1>
+    <div className="relative w-full h-screen">
+      <video
+        className="absolute top-0 left-0 object-cover w-screen h-screen"
+        src="/video/perfiles.mp4"
+        autoPlay
+        loop
+        muted
+      ></video>
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
+      <div className="bg-gray-800 bg-opacity-60 backdrop-filter backdrop-blur-lg w-50vw  pt-10 pb-10 mt-20 ">
 
-      <form onSubmit={handleLogin} >
-        <div className="mb-4">
-          <label htmlFor="email" className="block mb-2 text-lg font-medium">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={handleEmailChange}
-            className="w-full px-4 py-2 border rounded-md"
-            required
-          />
-        </div>
+      <div className="flex flex-col items-center  p-24">
+      <h1 className="text-4xl text-white pb-10">Iniciar Sesión</h1>
 
-        <div className="mb-6">
-          <label htmlFor="password" className="block mb-2 text-lg font-medium">
-            Contraseña
-          </label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-            className="w-full px-4 py-2 border rounded-md"
-            required
-          />
-        </div>
+          <form onSubmit={handleLogin}>
+            <div className="mb-4">
+            
+            
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={handleEmailChange}
+                className="w-full px-4 py-2 border rounded-md"
+                required
+              />
+            </div>
 
-        <button
-          type="submit"
-          className="w-full py-2 px-4 text-white bg-blue-500 rounded-md hover:bg-blue-600"
-        >
-          Iniciar sesión
-        </button>
-      </form>
+            <div className="mb-6">
+    
+    
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={handlePasswordChange}
+                className="w-full px-4 py-2 border rounded-md"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="mt-8 bg-white text-gray-800 rounded-full py-2 px-4 border-b-2 border-gray-500 hover:bg-gray-500 hover:bg-opacity-25 hover:text-gray-900"          >
+              
+              Iniciar sesión
+            </button>
+          </form>
+          </div>
+          </div>
+      </div>
     </div>
   );
 }
